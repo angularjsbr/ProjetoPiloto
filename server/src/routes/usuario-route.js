@@ -15,8 +15,8 @@ exports.register = function(server, options, next) {
 		method: 'GET',
 		path: '/api/users',
 		config: {
-			handler : controllers.UserController.find,
-			validate: validators.UserValidator.find
+			handler : controllers.UsuarioController.find,
+			validate: validators.UsuarioValidator.find
 		}
 	});
 
@@ -33,8 +33,8 @@ exports.register = function(server, options, next) {
 		method: 'GET',
 		path: '/api/users/{id}',
 		config: {
-		  	handler : controllers.UserController.findByID,
-			validate: validators.UserValidator.findByID
+		  	handler : controllers.UsuarioController.findByID,
+			validate: validators.UsuarioValidator.findByID
 		}
 	});
 
@@ -54,8 +54,8 @@ exports.register = function(server, options, next) {
 		method: 'POST',
 		path: '/api/users',
 		config: {
-			handler: controllers.UserController.insert,
-			validate: validators.UserValidator.insert
+			handler: controllers.UsuarioController.insert,
+			validate: validators.UsuarioValidator.insert
 		}
 	});
 
@@ -77,8 +77,8 @@ exports.register = function(server, options, next) {
 		method: 'PUT', 
 		path: '/api/users/{id}',
 		config: {
-			handler: controllers.UserController.update,
-			validate: validators.UserValidator.update
+			handler: controllers.UsuarioController.update,
+			validate: validators.UsuarioValidator.update
 		} 
 	}); 
 	 
@@ -95,8 +95,8 @@ exports.register = function(server, options, next) {
 		method: 'DELETE',
 		path: '/api/users/{id}',
 		config: {
-	    	handler: controllers.UserController.delete,
-	    	validate: validators.UserValidator.delete
+	    	handler: controllers.UsuarioController.delete,
+	    	validate: validators.UsuarioValidator.delete
 		}
 	});
 
@@ -104,6 +104,6 @@ exports.register = function(server, options, next) {
 };
 
 exports.register.attributes = {
-  name: 'users-route',
+  name: 'usuario-route',
   version: '0.0.1'
 };
