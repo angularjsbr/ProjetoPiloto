@@ -1,5 +1,6 @@
 var mongoose = require('mongoose'),
-Schema = mongoose.Schema;
+Schema = mongoose.Schema,
+Usuario = require('./usuario');
 
 var Ticket = new Schema({
 titulo:{type:String,required:true},
@@ -11,8 +12,8 @@ data_inicio:{type:Date,required:true},
 data_prevista:Date,
 status:Number,
 data_criacao:{type:Date,required:true,default:Date.now},
-criado:{type:String,required:true},
-atribuido:String
+criador:[Usuario],
+atribuido:[Usuario]
 ativo:{type:Boolean, default:true}
 });
 
