@@ -2,7 +2,7 @@ var mongoose = require('mongoose'),
 Schema = mongoose.Schema;
 
 var Organizacao = new Schema({
-nome:String,
+nome:{type:String,required:true},
 descricao:String,
 logo:String,
 ativo:{type:Boolean, default:true}
