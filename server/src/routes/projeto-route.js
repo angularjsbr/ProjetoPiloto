@@ -25,7 +25,7 @@ exports.register = function(server, options, next) {
 	* @apiName findById
 	* @apiGroup Projeto
 	* @apiDescription Retorna projeto com base no parâmetro
-	*
+	*	
 	*
 	* @apiParam {String} id ID do projeto
 	*/

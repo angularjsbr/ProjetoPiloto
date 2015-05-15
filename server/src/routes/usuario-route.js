@@ -7,8 +7,8 @@ exports.register = function(server, options, next) {
 	/**
 	* @api {get} /api/users
 	* @apiName find
-	* @apiGroup User
-	* @apiDescription Returns a list of users
+	* @apiGroup Usuário
+	* @apiDescription Lista de usuários
 	*
 	*/
 	server.route({
@@ -23,11 +23,11 @@ exports.register = function(server, options, next) {
 	/**
 	* @api {get} /api/users
 	* @apiName findById
-	* @apiGroup User
-	* @apiDescription Returns a user based on the parameter
+	* @apiGroup Usuário
+	* @apiDescription Retorna usuário com base no parâmetro
 	*
 	*
-	* @apiParam {String} id The user id to be returned
+	* @apiParam {String} id ID do usuário
 	*/
 	server.route({
 		method: 'GET',
@@ -41,14 +41,15 @@ exports.register = function(server, options, next) {
 	/**
 	* @api {post} /api/v1/user
 	* @apiName insert
-	* @apiGroup User
-	* @apiDescription Create new user
+	* @apiGroup Usuário
+	* @apiDescription Criar usuário
 	*
 	*
-	* @apiParam {String} name User's first name
-	* @apiParam {String} lastName Last name of the user
-	* @apiParam {String} email The user email
-	* @apiParam {String} password The user password
+	* @apiParam {String} nome Nome do usuário
+	* @apiParam {String} organizacao Organização do usuário
+	* @apiParam {String} email E-mail do usuário
+	* @apiParam {String} senha Senha do usuário
+	* @apiParam {Boolean} ativo Se o usuário está ativo
 	*/
 	server.route({ 
 		method: 'POST',
@@ -62,16 +63,17 @@ exports.register = function(server, options, next) {
 	/**
 	* @api {put} /api/v1/user
 	* @apiName update
-	* @apiGroup User
-	* @apiDescription Update user
+	* @apiGroup Usuário
+	* @apiDescription Atualizar usuário
 	*
 	*
-	* @apiParam {String} [name] User's first name
-	* @apiParam {String} [lastName] Last name of the user
-	* @apiParam {String} [email] The user email
-	* @apiParam {String} [password] The user password
+	* @apiParam {String} [nome] Nome do usuário
+	* @apiParam {String} [organizacao] Organização do usuário
+	* @apiParam {String} [email] E-mail do usuário
+	* @apiParam {String} [senha] Senha do usuário
+	* @apiParam {Boolean} [ativo] Se o usuário está ativo
 	*
-	* @apiParam {String} id The user id to be updated
+	* @apiParam {String} id ID do usuário a ser atualizado
 	*/
 	server.route({
 		method: 'PUT', 
@@ -85,11 +87,11 @@ exports.register = function(server, options, next) {
 	/**
 	* @api {delete} /api/v1/user
 	* @apiName delete
-	* @apiGroup User
-	* @apiDescription Delete user
+	* @apiGroup Usuário
+	* @apiDescription Excluir usuário
 	*
 	*
-	* @apiParam {String} id The user id to be deleted
+	* @apiParam {String} id ID do usuário a ser excluído
 	*/	 
 	server.route({
 		method: 'DELETE',
