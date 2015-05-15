@@ -7,7 +7,7 @@ exports.register = function(server, options, next) {
 	/**
 	* @api {get} /api/users
 	* @apiName find
-	* @apiGroup Usuário
+	* @apiGroup Usuario
 	* @apiDescription Lista de usuários
 	*
 	*/
@@ -23,7 +23,7 @@ exports.register = function(server, options, next) {
 	/**
 	* @api {get} /api/users
 	* @apiName findById
-	* @apiGroup Usuário
+	* @apiGroup Usuario
 	* @apiDescription Retorna usuário com base no parâmetro
 	*
 	*
@@ -41,7 +41,7 @@ exports.register = function(server, options, next) {
 	/**
 	* @api {post} /api/v1/user
 	* @apiName insert
-	* @apiGroup Usuário
+	* @apiGroup Usuario
 	* @apiDescription Criar usuário
 	*
 	*
@@ -63,7 +63,7 @@ exports.register = function(server, options, next) {
 	/**
 	* @api {put} /api/v1/user
 	* @apiName update
-	* @apiGroup Usuário
+	* @apiGroup Usuario
 	* @apiDescription Atualizar usuário
 	*
 	*
@@ -87,7 +87,7 @@ exports.register = function(server, options, next) {
 	/**
 	* @api {delete} /api/v1/user
 	* @apiName delete
-	* @apiGroup Usuário
+	* @apiGroup Usuario
 	* @apiDescription Excluir usuário
 	*
 	*
