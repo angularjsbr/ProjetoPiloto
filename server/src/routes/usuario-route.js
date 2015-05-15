@@ -7,7 +7,7 @@ exports.register = function(server, options, next) {
 	/**
 	* @api {get} /api/users
 	* @apiName find
-	* @apiGroup Usuário
+	* @apiGroup Usuario
 	* @apiDescription Lista de usuários
 	*
 	*/
@@ -23,7 +23,7 @@ exports.register = function(server, options, next) {
 	/**
 	* @api {get} /api/users
 	* @apiName findById
-	* @apiGroup Usuário
+	* @apiGroup Usuario
 	* @apiDescription Retorna usuário com base no parâmetro
 	*
 	*
@@ -41,12 +41,12 @@ exports.register = function(server, options, next) {
 	/**
 	* @api {post} /api/v1/user
 	* @apiName insert
-	* @apiGroup Usuário
+	* @apiGroup Usuario
 	* @apiDescription Criar usuário
 	*
 	*
 	* @apiParam {String} nome Nome do usuário
-	* @apiParam {String} organizacao Organização do usuário
+	* @apiParam {Object} organizacao Organização do usuário
 	* @apiParam {String} email E-mail do usuário
 	* @apiParam {String} senha Senha do usuário
 	* @apiParam {Boolean} ativo Se o usuário está ativo
@@ -63,12 +63,12 @@ exports.register = function(server, options, next) {
 	/**
 	* @api {put} /api/v1/user
 	* @apiName update
-	* @apiGroup Usuário
+	* @apiGroup Usuario
 	* @apiDescription Atualizar usuário
 	*
 	*
 	* @apiParam {String} [nome] Nome do usuário
-	* @apiParam {String} [organizacao] Organização do usuário
+	* @apiParam {Object} [organizacao] Organização do usuário
 	* @apiParam {String} [email] E-mail do usuário
 	* @apiParam {String} [senha] Senha do usuário
 	* @apiParam {Boolean} [ativo] Se o usuário está ativo
@@ -87,7 +87,7 @@ exports.register = function(server, options, next) {
 	/**
 	* @api {delete} /api/v1/user
 	* @apiName delete
-	* @apiGroup Usuário
+	* @apiGroup Usuario
 	* @apiDescription Excluir usuário
 	*
 	*

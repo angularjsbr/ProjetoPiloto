@@ -46,7 +46,7 @@ exports.register = function(server, options, next) {
 	*
 	*
 	* @apiParam {String} nome Nome do projeto
-	* @apiParam {String} descricao Descrição do projeto
+	* @apiParam {String} [descricao] Descrição do projeto
 	* @apiParam {Object} organizacao Organização do projeto
 	* @apiParam {String} ativo Se projeto está ativo
 	*/

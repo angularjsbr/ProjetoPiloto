@@ -2,34 +2,41 @@ var Boom = require('boom');
 
 var models = require('../models');
 
-function UsuarioController(){};
+function EquipeController(){};
 
-UsuarioController.prototype = (function(){
+EquipeController.prototype = (function(){
 
 	return {
 
 	  	find: function (request, reply) {
 
-	  		var Usuario = models.Usuario;
-
-	  		Usuario.find().then(function(usuarios){
-	  			reply(usuarios);
-	  		});
-	  	},
-
-	 	findByID: function (request, reply) {
-		    
-	  		var usuario = {
+	  		var equipe = {
 	  			nome: 'name',
 	  			organizacao: {
 	  				descricao: 'organizacao'
 	  			},
-	  			email: 'email@gmail.com',
-	  			senha: 'senha',
-	  			ativo: true
+	  			usuario: {
+	  				nome: 'usuario'
+	  			}
 	  		}
-	  		
-  			reply(usuario);
+
+  			reply(equipe);
+
+	  	},
+
+	 	findByID: function (request, reply) {
+		    
+	  		var equipe = {
+	  			nome: 'name',
+	  			organizacao: {
+	  				descricao: 'organizacao'
+	  			},
+	  			usuario: {
+	  				nome: 'usuario'
+	  			}
+			}
+				  		
+  			reply(equipe);
 
 	  	},
 
@@ -56,7 +63,7 @@ UsuarioController.prototype = (function(){
 
 })();
 
-var usuarioController = new UsuarioController();
+var equipeController = new EquipeController();
 
-module.exports = usuarioController;
+module.exports = equipeController;
 

@@ -4,9 +4,9 @@ var Joi = require('joi');
 
 var schemas = require('../schemas');
 
-function ProjetoValidator(){};
+function EquipeValidator(){};
 
-ProjetoValidator.prototype = (function(){
+EquipeValidator.prototype = (function(){
 
 	return {
 
@@ -20,7 +20,7 @@ ProjetoValidator.prototype = (function(){
 		},
 		findByID: {
 			params: (function payload() {
-				var schema = new schemas.ProjetoSchema().schema;
+				var schema = new schemas.EquipeSchema().schema;
 				return {
 					id: schema.id.required()
 				};
@@ -28,28 +28,26 @@ ProjetoValidator.prototype = (function(){
 		},		
 		insert: {
 			payload: (function payload() {
-				var schema = new schemas.ProjetoSchema().schema;
+				var schema = new schemas.EquipeSchema().schema;
 				return {
 					nome: schema.nome.required(),
-					descricao: schema.descricao.optional(),
-					organizacao: schema.organizacao.required(),	
-					ativo: schema.ativo.required()
+					usuario: schema.usuario.required(),	
+					organizacao: schema.organizacao.required()
 				};
 			})()
 		},
 
 		update: {
 			payload: (function payload() {
-				var schema = new schemas.ProjetoSchema().schema;
+				var schema = new schemas.EquipeSchema().schema;
 				return {
 					nome: schema.nome.optional(),
-					descricao: schema.descricao.optional(),
-					organizacao: schema.organizacao.optional(),	
-					ativo: schema.ativo.optional()
+					usuario: schema.usuario.optional(),	
+					organizacao: schema.organizacao.optional()
 				};
 			})(),
 			params: (function params() {
-				var schema = new schemas.ProjetoSchema().schema;
+				var schema = new schemas.EquipeSchema().schema;
 				return {
 					id: schema.id.required()
 				};
@@ -58,7 +56,7 @@ ProjetoValidator.prototype = (function(){
 
 		delete: {
 			params: (function params() {
-				var schema = new schemas.ProjetoSchema().schema;
+				var schema = new schemas.EquipeSchema().schema;
 				return {
 					id: schema.id.required()
 				};
@@ -68,6 +66,6 @@ ProjetoValidator.prototype = (function(){
 
 })();
 
-var projetoValidator = new ProjetoValidator();
+var equipeValidator = new EquipeValidator();
 
-module.exports = projetoValidator;
+module.exports = equipeValidator;
