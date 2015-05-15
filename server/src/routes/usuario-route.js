@@ -46,7 +46,7 @@ exports.register = function(server, options, next) {
 	*
 	*
 	* @apiParam {String} nome Nome do usuário
-	* @apiParam {String} organizacao Organização do usuário
+	* @apiParam {Object} organizacao Organização do usuário
 	* @apiParam {String} email E-mail do usuário
 	* @apiParam {String} senha Senha do usuário
 	* @apiParam {Boolean} ativo Se o usuário está ativo
@@ -68,7 +68,7 @@ exports.register = function(server, options, next) {
 	*
 	*
 	* @apiParam {String} [nome] Nome do usuário
-	* @apiParam {String} [organizacao] Organização do usuário
+	* @apiParam {Object} [organizacao] Organização do usuário
 	* @apiParam {String} [email] E-mail do usuário
 	* @apiParam {String} [senha] Senha do usuário
 	* @apiParam {Boolean} [ativo] Se o usuário está ativo
