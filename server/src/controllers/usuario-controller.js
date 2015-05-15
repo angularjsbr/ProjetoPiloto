@@ -10,18 +10,11 @@ UsuarioController.prototype = (function(){
 
 	  	find: function (request, reply) {
 
-	  		var usuario = {
-	  			nome: 'name',
-	  			organizacao: {
-	  				descricao: 'organizacao'
-	  			},
-	  			email: 'email@gmail.com',
-	  			senha: 'senha',
-	  			ativo: true
-	  		}
+	  		var Usuario = models.Usuario;
 
-  			reply(usuario);
-
+	  		Usuario.find().then(function(usuarios){
+	  			reply(usuarios);
+	  		});
 	  	},
 
 	 	findByID: function (request, reply) {

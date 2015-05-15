@@ -2,12 +2,16 @@ module.exports = function() {
 
 	var env = process.env.NODE_ENV || 'development';
 	var appConstants = applicationConfig();
+	var dbContants = databaseConfig();
 
 	var obj = {
 		application : {
 			url  : appConstants[env]['url'],
 			host : appConstants[env]['host'],
 			port : appConstants[env]['port'],
+		},
+		dataBase: {
+			uri  :  dbContants[env]['uri']
 		}
 	};
 
@@ -20,6 +24,20 @@ module.exports = function() {
 	}
 
 	return obj;
+
+	function databaseConfig(){
+		return {
+			'production' : {
+				'uri' : 'configurar'
+			},
+			'development' : {
+				'uri' : 'mongodb://ngile:ngile123@@ds031932.mongolab.com:31932/ngile'
+			},
+			'test' : {
+				'uri' : 'configurar'
+			}
+		};
+	}
 
 	function applicationConfig(){
 		return {

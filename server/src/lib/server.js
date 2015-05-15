@@ -3,6 +3,8 @@ var Hapi = require('hapi');
 var constants = require('../config/constants.js');
 var routes = require('../routes');
 
+require('./db.js')
+
 var server = new Hapi.Server();
 
 server.connection({
