@@ -31,7 +31,7 @@ ProjetoValidator.prototype = (function(){
 				var schema = new schemas.ProjetoSchema().schema;
 				return {
 					nome: schema.nome.required(),
-					descricao: schema.descricao.required(),
+					descricao: schema.descricao.optional(),
 					organizacao: schema.organizacao.required(),	
 					ativo: schema.ativo.required()
 				};
