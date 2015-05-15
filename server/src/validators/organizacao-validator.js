@@ -31,8 +31,8 @@ OrganizacaoValidator.prototype = (function(){
 				var schema = new schemas.OrganizacaoSchema().schema;
 				return {
 					nome: schema.nome.required(),
-					descricao: schema.descricao.required(),
-					logo: schema.logo.required(),	
+					descricao: schema.descricao.optional(),
+					logo: schema.logo.optional(),	
 					ativo: schema.ativo.required()
 				};
 			})()

@@ -7,7 +7,7 @@ exports.register = function(server, options, next) {
 	/**
 	* @api {get} /api/organizacoes
 	* @apiName find
-	* @apiGroup Organização
+	* @apiGroup Organizacao
 	* @apiDescription Lista de organizações
 	*
 	*/
@@ -23,7 +23,7 @@ exports.register = function(server, options, next) {
 	/**
 	* @api {get} /api/organizacoes
 	* @apiName findById
-	* @apiGroup Organização
+	* @apiGroup Organizacao
 	* @apiDescription Retorna organização com base no parâmetro
 	*	
 	*
@@ -41,13 +41,13 @@ exports.register = function(server, options, next) {
 	/**
 	* @api {post} /api/organizacoes
 	* @apiName insert
-	* @apiGroup Organização
+	* @apiGroup Organizacao
 	* @apiDescription Criar organização
 	*
 	*
 	* @apiParam {String} nome Nome da organização
-	* @apiParam {String} descricao Descrição da organização
-	* @apiParam {String} logo Logo da organização
+	* @apiParam {String} [descricao] Descrição da organização
+	* @apiParam {String} [logo] Logo da organização
 	* @apiParam {String} ativo Se organização está ativa
 	*/
 	server.route({ 
@@ -62,7 +62,7 @@ exports.register = function(server, options, next) {
 	/**
 	* @api {put} /api/organizacoes
 	* @apiName update
-	* @apiGroup Organização
+	* @apiGroup Organizacao
 	* @apiDescription Atualizar organização
 	*
 	*
@@ -85,7 +85,7 @@ exports.register = function(server, options, next) {
 	/**
 	* @api {delete} /api/organizacoes
 	* @apiName delete
-	* @apiGroup Organização
+	* @apiGroup Organizacao
 	* @apiDescription Excluir organização
 	*
 	*
