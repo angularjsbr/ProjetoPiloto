@@ -2,7 +2,7 @@ module.exports = function() {
 
 	var env = process.env.NODE_ENV || 'development';
 	var appConstants = applicationConfig();
-	var dbContants = databaseConfig();
+	var dbConstants = databaseConfig();
 
 	var obj = {
 		application : {
@@ -11,7 +11,8 @@ module.exports = function() {
 			port : appConstants[env]['port']
 		},
 		dataBase: {
-			uri  :  dbContants[env]['uri']
+			uri  :  dbConstants[env]['uri'],
+                        seed :  dbConstants[env]['seed']
 		}
 	};
 

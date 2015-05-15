@@ -28,7 +28,8 @@ server.on('start', function () {
             Org.create({nome: 'AnguarJS BR', 'descricao': 'Comunidade Brasileira de AngularJS'}, function (err, org) {
                 if (err)
                     throw err;
-                console.log("Org Criada com Sucesso!"+org);
+                console.log("Org Criada com Sucesso!");
+                console.log(org);
             });
         });
     }
