@@ -6,31 +6,36 @@ function UsuarioController(){};
 
 UsuarioController.prototype = (function(){
 
+	var Usuario = models.Usuario;
+
 	return {
 
 	  	find: function (request, reply) {
 
-	  		var Usuario = models.Usuario;
-
-	  		Usuario.find().then(function(usuarios){
-	  			reply(usuarios);
-	  		});
+	  		Usuario.find().exec().then(
+	  			function(usuarios){
+	  				reply(usuarios);
+	  			},
+	  			function(error){
+	  				reply(Boom.badData(error.message));
+	  			}
+	  		);
 	  	},
 
 	 	findByID: function (request, reply) {
 		    
-	  		var usuario = {
-	  			nome: 'name',
-	  			organizacao: {
-	  				descricao: 'organizacao'
+	  		Usuario.findById(request.params.id).exec().then(
+	  			function(usuario){
+	  				if (usuario)
+	  					reply(usuario);
+	  				else 
+	  					reply(Boom.badData('usuario nao encontrado'))
 	  			},
-	  			email: 'email@gmail.com',
-	  			senha: 'senha',
-	  			ativo: true
-	  		}
-	  		
-  			reply(usuario);
-
+	  			function(error){
+	  				reply(Boom.badData(error.message));
+	  			}
+	  		);
+ 			
 	  	},
 
 	    insert: function(request, reply) {
@@ -59,4 +64,3 @@ UsuarioController.prototype = (function(){
 var usuarioController = new UsuarioController();
 
 module.exports = usuarioController;
-

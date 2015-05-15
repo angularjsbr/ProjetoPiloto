@@ -31,7 +31,7 @@ exports.register = function(server, options, next) {
 	*/
 	server.route({
 		method: 'GET',
-		path: '/api/organizacoes/{id}',
+		path: '/api/organizacoes/{_id}',
 		config: {
 		  	handler : controllers.OrganizacaoController.findByID,
 			validate: validators.OrganizacaoValidator.findByID
@@ -75,7 +75,7 @@ exports.register = function(server, options, next) {
 	*/
 	server.route({
 		method: 'PUT', 
-		path: '/api/organizacoes/{id}',
+		path: '/api/organizacoes/{_id}',
 		config: {
 			handler: controllers.OrganizacaoController.update,
 			validate: validators.OrganizacaoValidator.update
@@ -93,7 +93,7 @@ exports.register = function(server, options, next) {
 	*/	 
 	server.route({
 		method: 'DELETE',
-		path: '/api/organizacoes/{id}',
+		path: '/api/organizacoes/{_id}',
 		config: {
 	    	handler: controllers.OrganizacaoController.delete,
 	    	validate: validators.OrganizacaoValidator.delete

@@ -22,7 +22,7 @@ UsuarioValidator.prototype = (function(){
 			params: (function payload() {
 				var schema = new schemas.UsuarioSchema().schema;
 				return {
-					id: schema.id.required()
+					_id: schema._id.required()
 				};
 			})()
 		},		
@@ -53,7 +53,7 @@ UsuarioValidator.prototype = (function(){
 			params: (function params() {
 				var schema = new schemas.UsuarioSchema().schema;
 				return {
-					id: schema.id.required()
+					_id: schema._id.required()
 				};
 			})()
 		},
@@ -62,7 +62,7 @@ UsuarioValidator.prototype = (function(){
 			params: (function params() {
 				var schema = new schemas.UsuarioSchema().schema;
 				return {
-					id: schema.id.required()
+					_id: schema._id.required()
 				};
 			})() 
 		}
