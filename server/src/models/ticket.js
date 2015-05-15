@@ -16,4 +16,4 @@ atribuido:String
 ativo:{type:Boolean, default:true}
 });
 
-module.exports = mongoose.model('Organizacao',Organizacao);
+module.exports = mongoose.model('Ticket',Ticket);

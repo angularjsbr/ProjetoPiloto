@@ -1,12 +1,12 @@
 var mongoose = require('mongoose'),
 Schema = mongoose.Schema;
 var org = require('./organizacao');
-
-var Projeto = new Schema({
+var Usuario = new Schema({
 nome:{type:String,required:true},
-descricao:String,
-organizacao:[org],
+email:{type:String,required:true},
+senha:{type:String,required:true},
+organizacao:[org]
 ativo:{type:Boolean, default:true}
 });
 
-module.exports = mongoose.model('Projeto',Projeto);
+module.exports = mongoose.model('Usuario',Usuario);
