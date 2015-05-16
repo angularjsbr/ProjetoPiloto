@@ -6,57 +6,82 @@ function EquipeController(){};
 
 EquipeController.prototype = (function(){
 
+	var Equipe = models.Equipe;
+
 	return {
 
 	  	find: function (request, reply) {
 
-	  		var equipe = {
-	  			nome: 'name',
-	  			organizacao: {
-	  				descricao: 'organizacao'
+	  		Equipe.find().exec().then(
+	  			function(equipes){
+	  				reply(equipes);
 	  			},
-	  			usuario: {
-	  				nome: 'usuario'
+	  			function(error){
+	  				reply(Boom.badData(error.message));
 	  			}
-	  		}
-
-  			reply(equipe);
-
+	  		);
 	  	},
 
 	 	findByID: function (request, reply) {
 		    
-	  		var equipe = {
-	  			nome: 'name',
-	  			organizacao: {
-	  				descricao: 'organizacao'
+	 		console.log(request.params._id)
+
+	  		Equipe.findById(request.params._id).exec().then(
+	  			function(equipe){
+	  				if (equipe)
+	  					reply(equipe);
+	  				else 
+	  					reply(Boom.badData('equipe nao encontrada'))
 	  			},
-	  			usuario: {
-	  				nome: 'usuario'
+	  			function(error){
+	  				console.log('request.params._id')
+	  				reply(Boom.badData(error.message));
 	  			}
-			}
-				  		
-  			reply(equipe);
+	  		);
 
 	  	},
 
 	    insert: function(request, reply) {
 
-			reply(request.payload);
+	    	Equipe.create(request.payload).then(
+          		function(equipe) { 
+            		reply(equipe);
+          		}, 
+          		function(error) { 
+		            reply(Boom.badData(error.message));
+        		}
+        	);	
 
 	 	},
 
 	 	update: function (request, reply) {
 
- 			reply(request.payload);		 
+ 			Equipe.findByIdAndUpdate(request.params._id, request.payload).exec().then(
+	  			function(equipe){
+	  				if (equipe)
+	  					reply(equipe);
+	  				else 
+	  					reply(Boom.badData('equipe nao encontrada'))
+	  			},
+	  			function(error){
+	  				reply(Boom.badData(error.message));
+	  			}
+	  		);		 
 
 	 	},
 
 		delete: function(request, reply) {
 
-			reply({
-				delete : request.params
-			});	
+	    	Equipe.remove(request.params._id).then(
+          		function(equipe) { 
+            		reply({
+            			success: true
+            		});
+          		}, 
+          		function(error) { 
+		            reply(Boom.badData(error.message));
+        		}
+        	);	
 			
 		}
 	}

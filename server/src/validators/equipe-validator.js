@@ -22,7 +22,7 @@ EquipeValidator.prototype = (function(){
 			params: (function payload() {
 				var schema = new schemas.EquipeSchema().schema;
 				return {
-					id: schema.id.required()
+					_id: schema._id.required()
 				};
 			})()
 		},		
@@ -49,7 +49,7 @@ EquipeValidator.prototype = (function(){
 			params: (function params() {
 				var schema = new schemas.EquipeSchema().schema;
 				return {
-					id: schema.id.required()
+					_id: schema._id.required()
 				};
 			})()
 		},
@@ -58,7 +58,7 @@ EquipeValidator.prototype = (function(){
 			params: (function params() {
 				var schema = new schemas.EquipeSchema().schema;
 				return {
-					id: schema.id.required()
+					_id: schema._id.required()
 				};
 			})() 
 		}

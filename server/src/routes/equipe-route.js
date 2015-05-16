@@ -31,7 +31,7 @@ exports.register = function(server, options, next) {
 	*/
 	server.route({
 		method: 'GET',
-		path: '/api/equipes/{id}',
+		path: '/api/equipes/{_id}',
 		config: {
 		  	handler : controllers.EquipeController.findByID,
 			validate: validators.EquipeValidator.findByID
@@ -73,7 +73,7 @@ exports.register = function(server, options, next) {
 	*/
 	server.route({
 		method: 'PUT', 
-		path: '/api/equipes/{id}',
+		path: '/api/equipes/{_id}',
 		config: {
 			handler: controllers.EquipeController.update,
 			validate: validators.EquipeValidator.update
@@ -91,7 +91,7 @@ exports.register = function(server, options, next) {
 	*/	 
 	server.route({
 		method: 'DELETE',
-		path: '/api/equipes/{id}',
+		path: '/api/equipes/{_id}',
 		config: {
 	    	handler: controllers.EquipeController.delete,
 	    	validate: validators.EquipeValidator.delete
