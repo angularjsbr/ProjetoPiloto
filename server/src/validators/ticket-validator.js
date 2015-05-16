@@ -22,7 +22,7 @@ TicketValidator.prototype = (function(){
 			params: (function payload() {
 				var schema = new schemas.TicketSchema().schema;
 				return {
-					id: schema.id.required()
+					_id: schema._id.required()
 				};
 			})()
 		},		
@@ -67,7 +67,7 @@ TicketValidator.prototype = (function(){
 			params: (function params() {
 				var schema = new schemas.TicketSchema().schema;
 				return {
-					id: schema.id.required()
+					_id: schema._id.required()
 				};
 			})()
 		},
@@ -76,7 +76,7 @@ TicketValidator.prototype = (function(){
 			params: (function params() {
 				var schema = new schemas.TicketSchema().schema;
 				return {
-					id: schema.id.required()
+					_id: schema._id.required()
 				};
 			})() 
 		}

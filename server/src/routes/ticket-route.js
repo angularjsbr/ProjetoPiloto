@@ -31,7 +31,7 @@ exports.register = function(server, options, next) {
 	*/
 	server.route({
 		method: 'GET',
-		path: '/api/tickets/{id}',
+		path: '/api/tickets/{_id}',
 		config: {
 		  	handler : controllers.TicketController.findByID,
 			validate: validators.TicketValidator.findByID
@@ -91,7 +91,7 @@ exports.register = function(server, options, next) {
 	*/
 	server.route({
 		method: 'PUT', 
-		path: '/api/tickets/{id}',
+		path: '/api/tickets/{_id}',
 		config: {
 			handler: controllers.TicketController.update,
 			validate: validators.TicketValidator.update
@@ -109,7 +109,7 @@ exports.register = function(server, options, next) {
 	*/	 
 	server.route({
 		method: 'DELETE',
-		path: '/api/tickets/{id}',
+		path: '/api/tickets/{_id}',
 		config: {
 	    	handler: controllers.TicketController.delete,
 	    	validate: validators.TicketValidator.delete

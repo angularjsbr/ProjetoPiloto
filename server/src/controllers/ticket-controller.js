@@ -6,79 +6,80 @@ function TicketController(){};
 
 TicketController.prototype = (function(){
 
+	var Ticket = models.Ticket;
+
 	return {
 
 	  	find: function (request, reply) {
 
-	  		var ticket = {
-	  			titulo: 'titulo',
-				descricao: 'descricao',
-				tipo: 'tipo',
-				prioridade: 'prioridade',
-				sprint: 1,
-				data_inicio: new Date(),
-				data_prevista: new Date(),
-				status: 1,
-				data_criacao: new Date(),
-				criador: {
-					id: 1,
-					nome: 'usuario'
-				},
-				atribuido:{
-					id: 1,
-					nome: 'usuario'
-				},
-				ativo:false
-	  		}
-
-  			reply(ticket);
+	  		Ticket.find().exec().then(
+	  			function(ticket){
+	  				reply(ticket);
+	  			},
+	  			function(error){
+	  				reply(Boom.badData(error.message));
+	  			}
+	  		);
 
 	  	},
 
 	 	findByID: function (request, reply) {
 		    
-	  		var ticket = {
-	  			titulo: 'titulo',
-				descricao: 'descricao',
-				tipo: 'tipo',
-				prioridade: 'prioridade',
-				sprint: 1,
-				data_inicio: new Date(),
-				data_prevista: new Date(),
-				status: 1,
-				data_criacao: new Date(),
-				criador: {
-					id: 1,
-					nome: 'usuario'
-				},
-				atribuido:{
-					id: 1,
-					nome: 'usuario'
-				},
-				ativo:false
-	  		}
-	  		
-  			reply(ticket);
+	  		Ticket.findById(request.params._id).exec().then(
+	  			function(ticket){
+	  				if (ticket)
+	  					reply(ticket);
+	  				else 
+	  					reply(Boom.badData('ticket nao encontrado'))
+	  			},
+	  			function(error){
+	  				reply(Boom.badData(error.message));
+	  			}
+	  		);
 
 	  	},
 
 	    insert: function(request, reply) {
 
-			reply(request.payload);
+	    	Ticket.create(request.payload).then(
+          		function(ticket) { 
+            		reply(ticket);
+          		}, 
+          		function(error) { 
+		            reply(Boom.badData(error.message));
+        		}
+        	);
 
 	 	},
 
 	 	update: function (request, reply) {
 
- 			reply(request.payload);		 
+ 			Ticket.findByIdAndUpdate(request.params._id, request.payload).exec().then(
+	  			function(ticket){
+	  				if (ticket)
+	  					reply(ticket);
+	  				else 
+	  					reply(Boom.badData('ticket nao encontradO'))
+	  			},
+	  			function(error){
+	  				reply(Boom.badData(error.message));
+	  			}
+	  		);		 
 
 	 	},
 
 		delete: function(request, reply) {
 
-			reply({
-				delete : request.params
-			});	
+	    	Ticket.remove(request.params._id).then(
+          		function(ticket) { 
+            		reply({
+            			success: true
+            		});
+          		}, 
+          		function(error) { 
+		            reply(Boom.badData(error.message));
+        		}
+        	);	
 			
 		}
 	}
