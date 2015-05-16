@@ -24,7 +24,7 @@ UsuarioController.prototype = (function(){
 
 	 	findByID: function (request, reply) {
 		    
-	  		Usuario.findById(request.params.id).exec().then(
+	  		Usuario.findById(request.params._id).exec().then(
 	  			function(usuario){
 	  				if (usuario)
 	  					reply(usuario);
@@ -40,22 +40,44 @@ UsuarioController.prototype = (function(){
 
 	    insert: function(request, reply) {
 
-			reply(request.payload);
+	    	Usuario.create(request.payload).then(
+          		function(usuario) { 
+            		reply(usuario);
+          		}, 
+          		function(error) { 
+		            reply(Boom.badData(error.message));
+        		}
+        	);	    	
 
 	 	},
 
 	 	update: function (request, reply) {
 
- 			reply(request.payload);		 
-
+			Usuario.findByIdAndUpdate(request.params._id, request.payload).exec().then(
+	  			function(usuario){
+	  				if (usuario)
+	  					reply(usuario);
+	  				else 
+	  					reply(Boom.badData('usuario nao encontrado'))
+	  			},
+	  			function(error){
+	  				reply(Boom.badData(error.message));
+	  			}
+	  		);  
 	 	},
 
 		delete: function(request, reply) {
 
-			reply({
-				delete : request.params
-			});	
-			
+	    	Usuario.remove(request.params._id).then(
+          		function(usuario) { 
+            		reply({
+            			success: true
+            		});
+          		}, 
+          		function(error) { 
+		            reply(Boom.badData(error.message));
+        		}
+        	);		
 		}
 	}
 
