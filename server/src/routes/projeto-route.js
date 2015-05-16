@@ -31,7 +31,7 @@ exports.register = function(server, options, next) {
 	*/
 	server.route({
 		method: 'GET',
-		path: '/api/projetos/{id}',
+		path: '/api/projetos/{_id}',
 		config: {
 		  	handler : controllers.ProjetoController.findByID,
 			validate: validators.ProjetoValidator.findByID
@@ -75,7 +75,7 @@ exports.register = function(server, options, next) {
 	*/
 	server.route({
 		method: 'PUT', 
-		path: '/api/projetos/{id}',
+		path: '/api/projetos/{_id}',
 		config: {
 			handler: controllers.ProjetoController.update,
 			validate: validators.ProjetoValidator.update
@@ -93,7 +93,7 @@ exports.register = function(server, options, next) {
 	*/	 
 	server.route({
 		method: 'DELETE',
-		path: '/api/projetos/{id}',
+		path: '/api/projetos/{_id}',
 		config: {
 	    	handler: controllers.ProjetoController.delete,
 	    	validate: validators.ProjetoValidator.delete

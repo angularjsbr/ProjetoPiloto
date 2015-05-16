@@ -6,55 +6,80 @@ function ProjetoController(){};
 
 ProjetoController.prototype = (function(){
 
+	var Projeto = models.Projeto;
+
 	return {
 
 	  	find: function (request, reply) {
 
-	  		var projeto = {
-	  			nome: 'name',
-	  			organizacao: {
-	  				descricao: 'organizacao'
+  			Projeto.find().exec().then(
+	  			function(projetos){
+	  				reply(projetos);
 	  			},
-	  			descricao: 'projeto',
-	  			ativo: true
-	  		}
-
-  			reply(projeto);
+	  			function(error){
+	  				reply(Boom.badData(error.message));
+	  			}
+	  		);
 
 	  	},
 
 	 	findByID: function (request, reply) {
 		    
-	  		var projeto = {
-	  			nome: 'name',
-	  			organizacao: {
-	  				descricao: 'organizacao'
+	  		Projeto.findById(request.params._id).exec().then(
+	  			function(projeto){
+	  				if (projeto)
+	  					reply(projeto);
+	  				else 
+	  					reply(Boom.badData('projeto nao encontrado'))
 	  			},
-	  			descricao: 'projeto',
-	  			ativo: true
-	  		}
-	  		
-  			reply(projeto);
+	  			function(error){
+	  				reply(Boom.badData(error.message));
+	  			}
+	  		);
 
 	  	},
 
 	    insert: function(request, reply) {
 
-			reply(request.payload);
+	    	Projeto.create(request.payload).then(
+          		function(projeto) { 
+            		reply(projeto);
+          		}, 
+          		function(error) { 
+		            reply(Boom.badData(error.message));
+        		}
+        	);
 
 	 	},
 
 	 	update: function (request, reply) {
 
- 			reply(request.payload);		 
+ 			Projeto.findByIdAndUpdate(request.params._id, request.payload).exec().then(
+	  			function(projeto){
+	  				if (projeto)
+	  					reply(projeto);
+	  				else 
+	  					reply(Boom.badData('projeto nao encontrada'))
+	  			},
+	  			function(error){
+	  				reply(Boom.badData(error.message));
+	  			}
+	  		);		 
 
 	 	},
 
 		delete: function(request, reply) {
 
-			reply({
-				delete : request.params
-			});	
+	    	Projeto.remove(request.params._id).then(
+          		function(projeto) { 
+            		reply({
+            			success: true
+            		});
+          		}, 
+          		function(error) { 
+		            reply(Boom.badData(error.message));
+        		}
+        	);	
 			
 		}
 	}

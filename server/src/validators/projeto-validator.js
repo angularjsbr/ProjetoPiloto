@@ -22,7 +22,7 @@ ProjetoValidator.prototype = (function(){
 			params: (function payload() {
 				var schema = new schemas.ProjetoSchema().schema;
 				return {
-					id: schema.id.required()
+					_id: schema._id.required()
 				};
 			})()
 		},		
@@ -51,7 +51,7 @@ ProjetoValidator.prototype = (function(){
 			params: (function params() {
 				var schema = new schemas.ProjetoSchema().schema;
 				return {
-					id: schema.id.required()
+					_id: schema._id.required()
 				};
 			})()
 		},
@@ -60,7 +60,7 @@ ProjetoValidator.prototype = (function(){
 			params: (function params() {
 				var schema = new schemas.ProjetoSchema().schema;
 				return {
-					id: schema.id.required()
+					_id: schema._id.required()
 				};
 			})() 
 		}

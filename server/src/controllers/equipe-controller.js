@@ -24,8 +24,6 @@ EquipeController.prototype = (function(){
 
 	 	findByID: function (request, reply) {
 		    
-	 		console.log(request.params._id)
-
 	  		Equipe.findById(request.params._id).exec().then(
 	  			function(equipe){
 	  				if (equipe)
@@ -34,7 +32,6 @@ EquipeController.prototype = (function(){
 	  					reply(Boom.badData('equipe nao encontrada'))
 	  			},
 	  			function(error){
-	  				console.log('request.params._id')
 	  				reply(Boom.badData(error.message));
 	  			}
 	  		);
