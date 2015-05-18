@@ -1,0 +1,33 @@
+{
+    "name": "nGile",
+    "description": "nGile is a web application to manage software projects based on agile process like Scrum and so on.",
+    "version": "0.0.1",
+    "homepage": "https://github.com/angularjsbr/nGile",
+    "author": {
+        "name": "Samuel Castro",
+        "email": "samuelcastrosilva@gmail.com"
+    },
+    "main": "index.html",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components"
+    ],
+    "dependencies": {
+        "jquery": "~2.0",
+        "underscore": "~1.5",
+        "bootstrap": "~3.1",
+        "angular": "~1.3",
+        "angular-ui-router": "~0.2",
+        "angular-animate": "~1.3",
+        "angular-resource": "~1.3",
+        "angular-cookies": "~1.3",
+        "angular-mocks": "~1.3",
+        "angular-ui-utils": "~0.1",
+        "angular-bootstrap": "~0.10",
+        "moment": "~2.5",
+        "bootstrap-sass-official": "~3.3",
+        "angular-bootstrap": "~0.11",
+        "font-awesome": "~4.0"
+    }
+}

@@ -1,4 +1,6 @@
-server/node_modules
+node_modules
+bower_components
+.idea
 server/.DS_Store
 server/npm-debug.log
 /nbproject
