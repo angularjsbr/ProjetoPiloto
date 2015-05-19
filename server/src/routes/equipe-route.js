@@ -10,6 +10,8 @@ exports.register = function(server, options, next) {
 	* @apiGroup Equipe
 	* @apiDescription Lista de equipes
 	*
+	* @apiHeader {String} Autorização, token com o JWT
+	*
 	*/
 	server.route({
 		method: 'GET',
@@ -26,6 +28,8 @@ exports.register = function(server, options, next) {
 	* @apiName findById
 	* @apiGroup Equipe
 	* @apiDescription Retorna equipe com base no parâmetro
+	*
+	* @apiHeader {String} Autorização, token com o JWT
 	*	
 	*
 	* @apiParam {String} id ID da equipe
@@ -45,6 +49,8 @@ exports.register = function(server, options, next) {
 	* @apiName insert
 	* @apiGroup Equipe
 	* @apiDescription Criar equipe
+	*
+	* @apiHeader {String} Autorização, token com o JWT
 	*
 	*
 	* @apiParam {String} nome Nome do equipe
@@ -66,6 +72,8 @@ exports.register = function(server, options, next) {
 	* @apiName update
 	* @apiGroup Equipe
 	* @apiDescription Atualizar equipe
+	*
+	* @apiHeader {String} Autorização, token com o JWT
 	*
 	*
 	* @apiParam {String} [nome] Nome do equipe
@@ -89,6 +97,8 @@ exports.register = function(server, options, next) {
 	* @apiName delete
 	* @apiGroup Equipe
 	* @apiDescription Excluir equipe
+	*
+	* @apiHeader {String} Autorização, token com o JWT
 	*
 	*
 	* @apiParam {String} id ID da equipe a ser excluída

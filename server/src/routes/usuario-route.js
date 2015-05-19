@@ -10,6 +10,8 @@ exports.register = function(server, options, next) {
 	* @apiGroup Usuario
 	* @apiDescription Lista de usuários
 	*
+	* @apiHeader {String} Autorização, token com o JWT
+	*
 	*/
 	server.route({
 		method: 'GET',
@@ -26,6 +28,8 @@ exports.register = function(server, options, next) {
 	* @apiName findById
 	* @apiGroup Usuario
 	* @apiDescription Retorna usuário com base no parâmetro
+	*
+	* @apiHeader {String} Autorização, token com o JWT
 	*
 	*
 	* @apiParam {String} id ID do usuário
@@ -68,6 +72,8 @@ exports.register = function(server, options, next) {
 	* @apiGroup Usuario
 	* @apiDescription Atualizar usuário
 	*
+	* @apiHeader {String} Autorização, token com o JWT
+	*
 	*
 	* @apiParam {String} [nome] Nome do usuário
 	* @apiParam {Object} [organizacao] Organização do usuário
@@ -92,6 +98,8 @@ exports.register = function(server, options, next) {
 	* @apiName delete
 	* @apiGroup Usuario
 	* @apiDescription Excluir usuário
+	*
+	* @apiHeader {String} Autorização, token com o JWT
 	*
 	*
 	* @apiParam {String} id ID do usuário a ser excluído

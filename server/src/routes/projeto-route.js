@@ -10,6 +10,8 @@ exports.register = function(server, options, next) {
 	* @apiGroup Projeto
 	* @apiDescription Lista de projetos
 	*
+	* @apiHeader {String} Autorização, token com o JWT
+	*
 	*/
 	server.route({
 		method: 'GET',
@@ -26,6 +28,8 @@ exports.register = function(server, options, next) {
 	* @apiName findById
 	* @apiGroup Projeto
 	* @apiDescription Retorna projeto com base no parâmetro
+	*
+	* @apiHeader {String} Autorização, token com o JWT
 	*	
 	*
 	* @apiParam {String} id ID do projeto
@@ -45,6 +49,8 @@ exports.register = function(server, options, next) {
 	* @apiName insert
 	* @apiGroup Projeto
 	* @apiDescription Criar projeto
+	*
+	* @apiHeader {String} Autorização, token com o JWT
 	*
 	*
 	* @apiParam {String} nome Nome do projeto
@@ -67,6 +73,8 @@ exports.register = function(server, options, next) {
 	* @apiName update
 	* @apiGroup Projeto
 	* @apiDescription Atualizar projeto
+	*
+	* @apiHeader {String} Autorização, token com o JWT
 	*
 	*
 	* @apiParam {String} [nome] Nome do projeto
@@ -91,6 +99,8 @@ exports.register = function(server, options, next) {
 	* @apiName delete
 	* @apiGroup Projeto
 	* @apiDescription Excluir projeto
+	*
+	* @apiHeader {String} Autorização, token com o JWT
 	*
 	*
 	* @apiParam {String} id ID do projeto a ser excluído
