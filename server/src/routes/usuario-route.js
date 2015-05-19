@@ -13,7 +13,7 @@ exports.register = function(server, options, next) {
 	*/
 	server.route({
 		method: 'GET',
-		path: '/api/users',
+		path: '/api/usuarios',
 		config: {
 			handler : controllers.UsuarioController.find,
 			validate: validators.UsuarioValidator.find,
@@ -32,7 +32,7 @@ exports.register = function(server, options, next) {
 	*/
 	server.route({
 		method: 'GET',
-		path: '/api/users/{_id}',
+		path: '/api/usuarios/{_id}',
 		config: {
 		  	handler : controllers.UsuarioController.findByID,
 			validate: validators.UsuarioValidator.findByID,
@@ -55,7 +55,7 @@ exports.register = function(server, options, next) {
 	*/
 	server.route({ 
 		method: 'POST',
-		path: '/api/users',
+		path: '/api/usuarios',
 		config: {
 			handler: controllers.UsuarioController.insert,
 			validate: validators.UsuarioValidator.insert
@@ -79,7 +79,7 @@ exports.register = function(server, options, next) {
 	*/
 	server.route({
 		method: 'PUT', 
-		path: '/api/users/{_id}',
+		path: '/api/usuarios/{_id}',
 		config: {
 			handler: controllers.UsuarioController.update,
 			validate: validators.UsuarioValidator.update,
@@ -98,7 +98,7 @@ exports.register = function(server, options, next) {
 	*/	 
 	server.route({
 		method: 'DELETE',
-		path: '/api/users/{_id}',
+		path: '/api/usuarios/{_id}',
 		config: {
 	    	handler: controllers.UsuarioController.delete,
 	    	validate: validators.UsuarioValidator.delete,
