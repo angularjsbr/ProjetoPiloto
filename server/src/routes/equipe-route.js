@@ -16,7 +16,8 @@ exports.register = function(server, options, next) {
 		path: '/api/equipes',
 		config: {
 			handler : controllers.EquipeController.find,
-			validate: validators.EquipeValidator.find
+			validate: validators.EquipeValidator.find,
+			auth: 'token'
 		}
 	});
 
@@ -34,7 +35,8 @@ exports.register = function(server, options, next) {
 		path: '/api/equipes/{_id}',
 		config: {
 		  	handler : controllers.EquipeController.findByID,
-			validate: validators.EquipeValidator.findByID
+			validate: validators.EquipeValidator.findByID,
+			auth: 'token'
 		}
 	});
 
@@ -54,7 +56,8 @@ exports.register = function(server, options, next) {
 		path: '/api/equipes',
 		config: {
 			handler: controllers.EquipeController.insert,
-			validate: validators.EquipeValidator.insert
+			validate: validators.EquipeValidator.insert,
+			auth: 'token'
 		}
 	});
 
@@ -76,7 +79,8 @@ exports.register = function(server, options, next) {
 		path: '/api/equipes/{_id}',
 		config: {
 			handler: controllers.EquipeController.update,
-			validate: validators.EquipeValidator.update
+			validate: validators.EquipeValidator.update,
+			auth: 'token'
 		} 
 	}); 
 	 
@@ -94,7 +98,8 @@ exports.register = function(server, options, next) {
 		path: '/api/equipes/{_id}',
 		config: {
 	    	handler: controllers.EquipeController.delete,
-	    	validate: validators.EquipeValidator.delete
+	    	validate: validators.EquipeValidator.delete,
+	    	auth: 'token'
 		}
 	});
 

@@ -1,9 +1,11 @@
 var Hapi = require('hapi');
 
 var constants = require('../config/constants.js');
+var plugins = require('../plugins');
 var routes = require('../routes');
 var Org = require('../models/organizacao');
 var db = require('./db.js');
+
 
 
 var server = new Hapi.Server();
@@ -16,7 +18,7 @@ server.connection({
     }
 });
 
-server.register(routes, function (err) {
+server.register(plugins.concat(routes), function (err) {
     if (err)
         throw err;
 });

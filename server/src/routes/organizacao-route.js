@@ -16,7 +16,8 @@ exports.register = function(server, options, next) {
 		path: '/api/organizacoes',
 		config: {
 			handler : controllers.OrganizacaoController.find,
-			validate: validators.OrganizacaoValidator.find
+			validate: validators.OrganizacaoValidator.find,
+			auth: 'token'
 		}
 	});
 
@@ -34,7 +35,8 @@ exports.register = function(server, options, next) {
 		path: '/api/organizacoes/{_id}',
 		config: {
 		  	handler : controllers.OrganizacaoController.findByID,
-			validate: validators.OrganizacaoValidator.findByID
+			validate: validators.OrganizacaoValidator.findByID,
+			auth: 'token'
 		}
 	});
 
@@ -55,7 +57,8 @@ exports.register = function(server, options, next) {
 		path: '/api/organizacoes',
 		config: {
 			handler: controllers.OrganizacaoController.insert,
-			validate: validators.OrganizacaoValidator.insert
+			validate: validators.OrganizacaoValidator.insert,
+			auth: 'token'
 		}
 	});
 
@@ -78,7 +81,8 @@ exports.register = function(server, options, next) {
 		path: '/api/organizacoes/{_id}',
 		config: {
 			handler: controllers.OrganizacaoController.update,
-			validate: validators.OrganizacaoValidator.update
+			validate: validators.OrganizacaoValidator.update,
+			auth: 'token'
 		} 
 	}); 
 	 
@@ -96,7 +100,8 @@ exports.register = function(server, options, next) {
 		path: '/api/organizacoes/{_id}',
 		config: {
 	    	handler: controllers.OrganizacaoController.delete,
-	    	validate: validators.OrganizacaoValidator.delete
+	    	validate: validators.OrganizacaoValidator.delete,
+	    	auth: 'token'
 		}
 	});
 

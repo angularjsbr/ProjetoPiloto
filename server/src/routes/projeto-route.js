@@ -16,7 +16,8 @@ exports.register = function(server, options, next) {
 		path: '/api/projetos',
 		config: {
 			handler : controllers.ProjetoController.find,
-			validate: validators.ProjetoValidator.find
+			validate: validators.ProjetoValidator.find,
+			auth: 'token'
 		}
 	});
 
@@ -34,7 +35,8 @@ exports.register = function(server, options, next) {
 		path: '/api/projetos/{_id}',
 		config: {
 		  	handler : controllers.ProjetoController.findByID,
-			validate: validators.ProjetoValidator.findByID
+			validate: validators.ProjetoValidator.findByID,
+			auth: 'token'
 		}
 	});
 
@@ -55,7 +57,8 @@ exports.register = function(server, options, next) {
 		path: '/api/projetos',
 		config: {
 			handler: controllers.ProjetoController.insert,
-			validate: validators.ProjetoValidator.insert
+			validate: validators.ProjetoValidator.insert,
+			auth: 'token'
 		}
 	});
 
@@ -78,7 +81,8 @@ exports.register = function(server, options, next) {
 		path: '/api/projetos/{_id}',
 		config: {
 			handler: controllers.ProjetoController.update,
-			validate: validators.ProjetoValidator.update
+			validate: validators.ProjetoValidator.update,
+			auth: 'token'
 		} 
 	}); 
 	 
@@ -96,7 +100,8 @@ exports.register = function(server, options, next) {
 		path: '/api/projetos/{_id}',
 		config: {
 	    	handler: controllers.ProjetoController.delete,
-	    	validate: validators.ProjetoValidator.delete
+	    	validate: validators.ProjetoValidator.delete,
+	    	auth: 'token'
 		}
 	});
 

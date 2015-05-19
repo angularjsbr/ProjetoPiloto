@@ -16,7 +16,8 @@ exports.register = function(server, options, next) {
 		path: '/api/users',
 		config: {
 			handler : controllers.UsuarioController.find,
-			validate: validators.UsuarioValidator.find
+			validate: validators.UsuarioValidator.find,
+			auth: 'token'
 		}
 	});
 
@@ -34,7 +35,8 @@ exports.register = function(server, options, next) {
 		path: '/api/users/{_id}',
 		config: {
 		  	handler : controllers.UsuarioController.findByID,
-			validate: validators.UsuarioValidator.findByID
+			validate: validators.UsuarioValidator.findByID,
+			auth: 'token'
 		}
 	});
 
@@ -80,7 +82,8 @@ exports.register = function(server, options, next) {
 		path: '/api/users/{_id}',
 		config: {
 			handler: controllers.UsuarioController.update,
-			validate: validators.UsuarioValidator.update
+			validate: validators.UsuarioValidator.update,
+			auth: 'token'
 		} 
 	}); 
 	 
@@ -98,7 +101,8 @@ exports.register = function(server, options, next) {
 		path: '/api/users/{_id}',
 		config: {
 	    	handler: controllers.UsuarioController.delete,
-	    	validate: validators.UsuarioValidator.delete
+	    	validate: validators.UsuarioValidator.delete,
+	    	auth: 'token'
 		}
 	});
 

@@ -16,7 +16,8 @@ exports.register = function(server, options, next) {
 		path: '/api/tickets',
 		config: {
 			handler : controllers.TicketController.find,
-			validate: validators.TicketValidator.find
+			validate: validators.TicketValidator.find,
+			auth: 'token'
 		}
 	});
 
@@ -34,7 +35,8 @@ exports.register = function(server, options, next) {
 		path: '/api/tickets/{_id}',
 		config: {
 		  	handler : controllers.TicketController.findByID,
-			validate: validators.TicketValidator.findByID
+			validate: validators.TicketValidator.findByID,
+			auth: 'token'
 		}
 	});
 
@@ -63,7 +65,8 @@ exports.register = function(server, options, next) {
 		path: '/api/tickets',
 		config: {
 			handler: controllers.TicketController.insert,
-			validate: validators.TicketValidator.insert
+			validate: validators.TicketValidator.insert,
+			auth: 'token'
 		}
 	});
 
@@ -94,7 +97,8 @@ exports.register = function(server, options, next) {
 		path: '/api/tickets/{_id}',
 		config: {
 			handler: controllers.TicketController.update,
-			validate: validators.TicketValidator.update
+			validate: validators.TicketValidator.update,
+			auth: 'token'
 		} 
 	}); 
 	 
@@ -112,7 +116,8 @@ exports.register = function(server, options, next) {
 		path: '/api/tickets/{_id}',
 		config: {
 	    	handler: controllers.TicketController.delete,
-	    	validate: validators.TicketValidator.delete
+	    	validate: validators.TicketValidator.delete,
+	    	auth: 'token'
 		}
 	});
 

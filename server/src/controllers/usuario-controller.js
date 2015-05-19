@@ -40,18 +40,30 @@ UsuarioController.prototype = (function(){
 
 	    insert: function(request, reply) {
 
+	    	var UsuarioHash = new models.Usuario();
+
+			request.payload.senha = UsuarioHash.gerarHash(request.payload.senha);
+
 	    	Usuario.create(request.payload).then(
           		function(usuario) { 
             		reply(usuario);
           		}, 
           		function(error) { 
+          			console.log(error)
 		            reply(Boom.badData(error.message));
         		}
         	);	    	
 
+
 	 	},
 
 	 	update: function (request, reply) {
+
+	 		var UsuarioHash = new models.Usuario();
+
+	 		if (request.payload.senha) {
+	 			request.payload.senha = UsuarioHash.gerarHash(request.payload.senha);
+	 		}
 
 			Usuario.findByIdAndUpdate(request.params._id, request.payload).exec().then(
 	  			function(usuario){
