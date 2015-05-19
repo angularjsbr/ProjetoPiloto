@@ -10,7 +10,7 @@ exports.register = function(server, options, next) {
 	* @apiGroup Organizacao
 	* @apiDescription Lista de organizações
 	*
-	* @apiHeader {String} Autorização, token com o JWT
+	* @apiHeader {String} Authorization Token com o JWT
 	*
 	*/
 	server.route({
@@ -29,7 +29,7 @@ exports.register = function(server, options, next) {
 	* @apiGroup Organizacao
 	* @apiDescription Retorna organização com base no parâmetro
 	*
-	* @apiHeader {String} Autorização, token com o JWT
+	* @apiHeader {String} Authorization Token com o JWT
 	*	
 	*
 	* @apiParam {String} id ID do organização
@@ -50,7 +50,7 @@ exports.register = function(server, options, next) {
 	* @apiGroup Organizacao
 	* @apiDescription Criar organização
 	*
-	* @apiHeader {String} Autorização, token com o JWT
+	* @apiHeader {String} Authorization Token com o JWT
 	*
 	*
 	* @apiParam {String} nome Nome da organização
@@ -74,7 +74,7 @@ exports.register = function(server, options, next) {
 	* @apiGroup Organizacao
 	* @apiDescription Atualizar organização
 	*
-	* @apiHeader {String} Autorização, token com o JWT
+	* @apiHeader {String} Authorization Token com o JWT
 	*
 	*
 	* @apiParam {String} [nome] Nome da organização
@@ -100,7 +100,7 @@ exports.register = function(server, options, next) {
 	* @apiGroup Organizacao
 	* @apiDescription Excluir organização
 	*
-	* @apiHeader {String} Autorização, token com o JWT
+	* @apiHeader {String} Authorization Token com o JWT
 	*
 	*
 	* @apiParam {String} id ID da organização a ser excluída

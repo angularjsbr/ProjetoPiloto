@@ -10,7 +10,7 @@ exports.register = function(server, options, next) {
 	* @apiGroup Ticket
 	* @apiDescription Lista de tickets
 	*
-	* @apiHeader {String} Autorização, token com o JWT
+	* @apiHeader {String} Authorization Token com o JWT
 	*
 	*/
 	server.route({
@@ -29,7 +29,7 @@ exports.register = function(server, options, next) {
 	* @apiGroup Ticket
 	* @apiDescription Retorna ticket com base no parâmetro
 	*
-	* @apiHeader {String} Autorização, token com o JWT
+	* @apiHeader {String} Authorization Token com o JWT
 	*	
 	*
 	* @apiParam {String} id ID do ticket
@@ -50,7 +50,7 @@ exports.register = function(server, options, next) {
 	* @apiGroup Ticket
 	* @apiDescription Criar ticket
 	*
-	* @apiHeader {String} Autorização, token com o JWT
+	* @apiHeader {String} Authorization Token com o JWT
 	*
 	*
 	* @apiParam {String} titulo Título do ticket
@@ -82,7 +82,7 @@ exports.register = function(server, options, next) {
 	* @apiGroup Ticket
 	* @apiDescription Atualizar ticket
 	*
-	* @apiHeader {String} Autorização, token com o JWT
+	* @apiHeader {String} Authorization Token com o JWT
 	*
 	*
 	* @apiParam {String} [titulo] Título do ticket
@@ -116,7 +116,7 @@ exports.register = function(server, options, next) {
 	* @apiGroup Ticket
 	* @apiDescription Excluir ticket
 	*
-	* @apiHeader {String} Autorização, token com o JWT
+	* @apiHeader {String} Authorization Token com o JWT
 	*
 	*
 	* @apiParam {String} id ID do ticket a ser excluído

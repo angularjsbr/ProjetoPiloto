@@ -5,12 +5,12 @@ var validators = require('../validators');
 exports.register = function(server, options, next) {
 
 	/**
-	* @api {get} /api/users
+	* @api {get} /api/usuarios
 	* @apiName find
 	* @apiGroup Usuario
 	* @apiDescription Lista de usuários
 	*
-	* @apiHeader {String} Autorização, token com o JWT
+	* @apiHeader {String} Authorization Token com o JWT
 	*
 	*/
 	server.route({
@@ -24,12 +24,12 @@ exports.register = function(server, options, next) {
 	});
 
 	/**
-	* @api {get} /api/users
+	* @api {get} /api/usuarios
 	* @apiName findById
 	* @apiGroup Usuario
 	* @apiDescription Retorna usuário com base no parâmetro
 	*
-	* @apiHeader {String} Autorização, token com o JWT
+	* @apiHeader {String} Authorization Token com o JWT
 	*
 	*
 	* @apiParam {String} id ID do usuário
@@ -45,7 +45,7 @@ exports.register = function(server, options, next) {
 	});
 
 	/**
-	* @api {post} /api/v1/user
+	* @api {post} /api/usuarios
 	* @apiName insert
 	* @apiGroup Usuario
 	* @apiDescription Criar usuário
@@ -67,12 +67,12 @@ exports.register = function(server, options, next) {
 	});
 
 	/**
-	* @api {put} /api/v1/user
+	* @api {put} /api/usuarios
 	* @apiName update
 	* @apiGroup Usuario
 	* @apiDescription Atualizar usuário
 	*
-	* @apiHeader {String} Autorização, token com o JWT
+	* @apiHeader {String} Authorization Token com o JWT
 	*
 	*
 	* @apiParam {String} [nome] Nome do usuário
@@ -94,12 +94,12 @@ exports.register = function(server, options, next) {
 	}); 
 	 
 	/**
-	* @api {delete} /api/v1/user
+	* @api {delete} /api/usuarios
 	* @apiName delete
 	* @apiGroup Usuario
 	* @apiDescription Excluir usuário
 	*
-	* @apiHeader {String} Autorização, token com o JWT
+	* @apiHeader {String} Authorization Token com o JWT
 	*
 	*
 	* @apiParam {String} id ID do usuário a ser excluído

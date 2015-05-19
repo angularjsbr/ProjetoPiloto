@@ -4,7 +4,7 @@ var validators = require('../validators');
 exports.register = function(server, options, next) {
 
   /**
-   * @api {post} /api/v1/auth
+   * @api {post} /api/auth
    * @apiName  Auth
    * @apiGroup Auth
    * @apiDescription Cria um novo JWT a partir de um usuário e uma senha
@@ -22,12 +22,12 @@ exports.register = function(server, options, next) {
   });
 
   /**
-   * @api {get} /api/v1/auth
+   * @api {get} /api/auth
    * @apiName  Get
    * @apiGroup Auth
    * @apiDescription Retorna informações sobre o token atual
    *
-   * @apiHeader {String} Autorização, token com o JWT
+   * @apiHeader {String} Authorization Token com o JWT
    */
   server.route({
     method: 'GET',
