@@ -1,7 +1,14 @@
 var server = require('./src/lib/server');
 
 var Good = require('good');
-
+server.register({
+  register: require('hapi-io'),
+ 
+}, function (err) {
+    if (err) {
+        throw err; 
+    }
+});
 server.register({
     register: Good,
     options: {
