@@ -1,4 +1,4 @@
-angular.module('nGile', ['ui.bootstrap','ui.utils','ui.router','ngAnimate', 'core']);
+angular.module('nGile', ['ui.bootstrap','ui.utils','ui.router','ngAnimate', 'core','ngMessages']);
 
 angular.module('nGile').config(function($stateProvider, $urlRouterProvider) {
 
