@@ -9,5 +9,4 @@ before_script:
     - npm install
     - bower install
 script:
-    - cd frontend
     - node_modules/karma/bin/karma start
